@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: org.h2.Driver
+    url: jdbc:h2:~/db/pretice4;MODE=MySQL
+    username: sa
+    password: 1234
+
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: ture
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: trace
+
+
+
